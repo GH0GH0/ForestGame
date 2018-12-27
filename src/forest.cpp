@@ -34,3 +34,11 @@ Forest::Forest(Forest const& tocopy) {
 Forest::~Forest() {
 
 }
+
+list<Obstacle*> Forest::getObstacles() {
+    return f_obstacles ;
+}
+
+list<Batisse>  Forest::getBatisses() {
+    return f_batisses ;
+}

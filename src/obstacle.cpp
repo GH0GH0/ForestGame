@@ -28,11 +28,20 @@ Obstacle::~Obstacle() {
 
 };
 
+int Obstacle::getX() {
+    return o_x ;
+}
+
+int Obstacle::getY() {
+    return o_y ;
+}
+
 void Obstacle::recevoirDegats(int nbDegats) {
     if (o_force > 0) {
         o_force -= nbDegats ;
-    } else
+    } 
+	/*else
     {
         Obstacle::~Obstacle();
-    }
+    }*/
 }

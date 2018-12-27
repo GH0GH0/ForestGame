@@ -23,8 +23,14 @@ class Forest
     // Constructeur avec params
     Forest(int X_size,int Y_size);
     // Forest(int X_size, int Y_size, list<obstacles*> obstacles);
+
     //Constructeur de copie
     Forest(Forest const& tocopy);
     ~Forest();
+
+    //Getters
+    list<Obstacle*> getObstacles();
+    list<Batisse> getBatisses();
+
 };
 #endif
