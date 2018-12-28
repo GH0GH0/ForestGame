@@ -4,13 +4,15 @@ Personnage::Personnage()
 {
 	p_x = 0;
 	p_y = 0;
+	p_d = 0;
 	p_vie = 0;
 }
 
-Personnage::Personnage(int x, int y, int vie)
+Personnage::Personnage(int x, int y, int d, int vie)
 {
 	p_x = x;
 	p_y = y;
+	p_d = d;
 	p_vie = vie;
 }
 
@@ -20,6 +22,21 @@ Personnage::Personnage(Personnage const & tocopy)
 
 Personnage::~Personnage()
 {
+}
+
+int Personnage::getX() const
+{
+	return p_x;
+}
+
+int Personnage::getY() const
+{
+	return p_y;
+}
+
+int Personnage::getD() const
+{
+	return p_d;
 }
 
 void Personnage::setOrientation(int angle)
@@ -36,10 +53,10 @@ void Personnage::tirer(int nbDegats) {
 	if (p_vie > 0) {
 		p_vie -= nbDegats ;
 	}
-	else
-	{
-		Personnage::~Personnage();
-	}
+	//else
+	//{
+		//Personnage::~Personnage();
+	//}
 }
 
 std::ostream& operator<<(std::ostream &strm, const Personnage &p) {
