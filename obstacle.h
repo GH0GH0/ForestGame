@@ -19,6 +19,10 @@ class Obstacle
     Obstacle(int x, int y, int diametre, int hauteur);
     Obstacle(Obstacle const& tocopy);
     ~Obstacle();
+	//Getters
+	virtual int getX();
+	virtual int getY();
+	virtual int getD();
     void recevoirDegats(int nbDegats);
 };
 
