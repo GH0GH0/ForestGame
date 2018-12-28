@@ -8,7 +8,8 @@
    public:
 	  collision();
 	
-	  static bool CercleCercle(Obstacle obstacle, Personnage perso);
+	  static bool CercleCercle(Obstacle obstacle, Personnage perso); //collision entre le joueur et l'obstacle 
+	  static bool PlayerPlayer(Personnage perso1, Personnage perso2);// collision entres les deux joueurs
 	  static bool CercleSegment();
 };
 
