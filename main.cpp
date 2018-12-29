@@ -7,5 +7,6 @@
 int main()
 {
 	Game game;
-	game.startGame();
+	//game.startGame();
+	game.startGraphic();
 }

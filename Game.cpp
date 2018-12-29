@@ -1,11 +1,13 @@
+#include <SFML/Graphics.hpp>
 #include "Game.h"
+#include "Menu.h"
 
 
 
 Game::Game()
 {
-	perso1 = Personnage(0, 0, 20);
-	perso2 = Personnage(10, 0, 20);
+	perso1 = Personnage(0, 0,1, 20);
+	perso2 = Personnage(10, 0,1, 20);
 }
 
 
@@ -17,7 +19,7 @@ void Game::startGame()
 {
 	bool firstChar=true;
 	Personnage* persActuel = &perso1;
-	std::cout << "assasin creed pixel" << std::endl;
+	std::cout << "Bateille en Foret" << std::endl;
 	while (true)
 	{   
 		if(firstChar)
@@ -41,3 +43,56 @@ void Game::startGame()
 			persActuel = &perso2;
 	}
 }
+
+void Game::startGraphic()
+{
+	sf::RenderWindow window;
+	window.create(sf::VideoMode(1080, 720), "SFML works!");
+	window.setPosition(sf::Vector2i(192, 0));
+	Menu menu(1080, 720);
+
+	while (window.isOpen())
+	{
+		
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+			{
+				menu.MoveUp();
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+			{
+				menu.MoveDown();
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+			{
+				switch (menu.GetPressedItem())
+				{
+				 case 0:
+					std::cout << "Play button has been pressed" << std::endl;
+					break;
+				 case 1:
+					std::cout << "Option button has been pressed" << std::endl;
+					break;
+				 case 2:
+					 window.close();
+					 break;
+				}
+			}
+			if (event.type == sf::Event::Closed)
+				window.close();
+
+
+		}
+		
+
+
+		menu.draw(window);
+		window.display();
+
+		window.clear();
+	}
+
+}
+
