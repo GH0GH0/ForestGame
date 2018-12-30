@@ -4,17 +4,11 @@
 using namespace std;
 
 Batisse::Batisse() {
-     o_x = 0 ;
-     o_y = 0 ;
-     o_diametre = 0 ;
-     o_hauteur = 0 ;
+	Obstacle();
 }
 
 Batisse::Batisse(int x, int y, int diametre, int hauteur) {
-    o_x = x ;
-    o_y = y ;
-    o_diametre = diametre ;
-    o_hauteur = hauteur ;
+	Obstacle(x, y, diametre, hauteur);
 }
 
 Batisse::Batisse(Batisse const& tocopy) {

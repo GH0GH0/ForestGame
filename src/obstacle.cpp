@@ -28,6 +28,18 @@ Obstacle::~Obstacle() {
 
 };
 
+int Obstacle::getX() const {
+    return o_x ;
+}
+
+int Obstacle::getY() const {
+    return o_y ;
+}
+
+int Obstacle::getD() const {
+    return o_diametre ;
+}
+
 void Obstacle::recevoirDegats(int nbDegats) {
     if (o_force > 0) {
         o_force -= nbDegats ;
