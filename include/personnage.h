@@ -40,12 +40,14 @@ class Personnage
 	virtual int getY() const;
 	virtual int getD() const;
 	void setOrientation(int angle);
-	void marcher(int distance);
+	void avancer (int distance);
+	void reculer (int distance);	
+	void monter (int distance);
+	void descendre (int distance);
 	void tirer(int nbDegats);
 
 
-   
-
+  
 };
 
 
