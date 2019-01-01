@@ -1,5 +1,5 @@
 #include "personnage.h"
-#include "forest.h"
+// #include "forest.h" a voir
 
 Personnage::Personnage()
 {
@@ -22,7 +22,7 @@ Personnage::Personnage(Personnage const & tocopy)
 	this->p_x=tocopy.getX();
 	this->p_y=tocopy.getY();
 	this->p_d=tocopy.getD();
-	this->p_vie=tocopy.getVie();
+	this->p_vie=tocopy.getV();
 }
 
 
