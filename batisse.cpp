@@ -7,8 +7,8 @@ Batisse::Batisse() {
 	Obstacle();
 }
 
-Batisse::Batisse(int x, int y, int diametre, int hauteur) {
-	Obstacle(x, y, diametre, hauteur);
+Batisse::Batisse(int x, int y, int diametre, int hauteur): Obstacle(x, y, diametre, hauteur) {
+	
 }
 
 Batisse::Batisse(Batisse const& tocopy) {

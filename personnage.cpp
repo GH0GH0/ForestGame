@@ -1,5 +1,7 @@
 #include "personnage.h"
 
+sf::Texture perso;
+sf::Sprite sprite_perso;
 Personnage::Personnage()
 {
 	p_x = 0;

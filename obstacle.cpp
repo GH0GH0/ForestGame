@@ -40,6 +40,16 @@ int Obstacle::getD()
 	return o_diametre;
 }
 
+int Obstacle::getH()
+{
+	return o_hauteur;
+}
+
+std::string Obstacle::getName()
+{
+	return "";
+}
+
 void Obstacle::recevoirDegats(int nbDegats) {
     if (o_force > 0) {
         o_force -= nbDegats ;
