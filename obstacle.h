@@ -1,6 +1,8 @@
 #ifndef OBSTACLE_H
 #define OBSTACLE_H
 
+#include <iostream>
+
 class Obstacle
 {
     protected:
@@ -19,6 +21,12 @@ class Obstacle
     Obstacle(int x, int y, int diametre, int hauteur);
     Obstacle(Obstacle const& tocopy);
     ~Obstacle();
+	//Getters
+	int getX();
+	int getY();
+	int getD();
+	int getH();
+	virtual std::string getName();
     void recevoirDegats(int nbDegats);
 };
 

@@ -8,4 +8,5 @@ int main()
 {
 	Game game;
 	game.startGame();
+	//game.startGraphic();
 }

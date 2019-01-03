@@ -20,8 +20,9 @@ class Obstacle
     Obstacle(Obstacle const& tocopy);
     ~Obstacle();
     //Getters
-    virtual int getX();
-    virtual int getY();
+    virtual int getX() const;
+	virtual int getY() const;
+    virtual int getD() const;
     //
     void recevoirDegats(int nbDegats);
 };

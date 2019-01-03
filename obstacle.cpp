@@ -27,6 +27,28 @@ Obstacle::Obstacle(Obstacle const& tocopy) {
 Obstacle::~Obstacle() {
 
 };
+int Obstacle::getX() {
+	return o_x;
+}
+
+int Obstacle::getY() {
+	return o_y;
+}
+
+int Obstacle::getD()
+{
+	return o_diametre;
+}
+
+int Obstacle::getH()
+{
+	return o_hauteur;
+}
+
+std::string Obstacle::getName()
+{
+	return "";
+}
 
 void Obstacle::recevoirDegats(int nbDegats) {
     if (o_force > 0) {
