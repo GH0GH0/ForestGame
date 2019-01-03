@@ -1,7 +1,7 @@
 #ifndef COLLISION_H
 #define COOLISION_H
 #include "obstacle.h"
-#include"batisse.h"
+#include "batisse.h"
 #include "personnage.h"
  class collision
 {

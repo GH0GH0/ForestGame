@@ -10,7 +10,7 @@ class Arbre : public Obstacle
     Arbre(int x, int y, int diametre, int hauteur);
     Arbre(Arbre const& tocopy);
     //Destructeurs
-    ~Arbre();
+    virtual ~Arbre();
 	std::string getName();
 };
 #endif

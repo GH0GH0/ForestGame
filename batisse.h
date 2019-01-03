@@ -10,7 +10,7 @@ class Batisse : public Obstacle
     Batisse(int x, int y, int diametre, int hauteur);
     Batisse(Batisse const& tocopy);
     //Destructeurs
-	~Batisse();
+	virtual ~Batisse();
 
 };
 #endif

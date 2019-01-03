@@ -45,6 +45,9 @@ void Personnage::setOrientation(int angle)
 {
 	if (angle > 0 && angle < 360)
 		p_rotation = angle;
+	else {
+		cerr << "Angle incorrect" << endl ;
+	}
 }
 
 void Personnage::marcher(int distance) {
@@ -54,6 +57,9 @@ void Personnage::marcher(int distance) {
 void Personnage::tirer(int nbDegats) {
 	if (p_vie > 0) {
 		p_vie -= nbDegats ;
+	}
+	else {
+		cout << "Vous n'avez plus de points de vie suffisants pour tirer" << endl ;
 	}
 	//else
 	//{

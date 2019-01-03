@@ -44,11 +44,13 @@ int Obstacle::getH()
 {
 	return o_hauteur;
 }
-
+// Retourne le nom de l'objet 
+/*
 std::string Obstacle::getName()
 {
 	return "";
 }
+*/
 
 void Obstacle::recevoirDegats(int nbDegats) {
     if (o_force > 0) {

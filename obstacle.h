@@ -20,13 +20,14 @@ class Obstacle
     Obstacle();
     Obstacle(int x, int y, int diametre, int hauteur);
     Obstacle(Obstacle const& tocopy);
-    ~Obstacle();
+    virtual ~Obstacle();
 	//Getters
 	int getX();
 	int getY();
 	int getD();
 	int getH();
-	virtual std::string getName();
+    // Fonction virtuelle pure, ce qui rend la classe obstacle abstraite
+	virtual std::string getName() = 0;
     void recevoirDegats(int nbDegats);
 };
 

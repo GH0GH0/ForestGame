@@ -4,7 +4,10 @@
 using namespace std;
 
 Batisse::Batisse() {
-	Obstacle();
+	o_x = 0 ;
+     o_y = 0 ;
+     o_diametre = 0 ;
+     o_hauteur = 0 ;
 }
 
 Batisse::Batisse(int x, int y, int diametre, int hauteur): Obstacle(x, y, diametre, hauteur) {

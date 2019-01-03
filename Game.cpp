@@ -1,8 +1,10 @@
 //#include <SFML/Graphics.hpp>
 #include "Game.h"
-
+#include <string>
 //#include"menu1.h"
 #include <fstream>
+
+using namespace std;
 
 Game::Game()
 {
@@ -20,21 +22,32 @@ void Game::startGame()
 {
 	bool firstChar=true;
 	Personnage* persActuel = &perso1;
-	std::cout << "Bateille en Foret" << std::endl;
-
-	
+	cout << "Bataille en Foret" << endl;
 
 	int sizeX = 0;
 	int sizeY = 0;
-	std::cout << "saisir la taille de la foret " << std::endl;
-	std::cout << "saisir la taille X " << std::endl;
-	std::cin >> sizeX  ;
-	std::cout << "saisir la taille Y " << std::endl;
-	std::cin >> sizeY  ;
+	// Coordonnées de la forêt
+	int error = 0
+	cout << "saisir la taille de la foret " << endl;
+	do {
+	error++
+	if (error > 1) {
+		cout << "Coordonnées de la forêt incorrectes" << endl ;
+	}
+	cout << "saisir la taille X " << endl;
+	cin >> sizeX  ;
+	cout << "saisir la taille Y " << endl;
+	cin >> sizeY  ;
+	} 
+	while (sizeX < 0 || sizeY < 0);
 	Forest foret(sizeX, sizeY); 
+	// ==========================
+	// Obstacles 
 	int nbrO = 0;
-	std::cout << "saisir le nombre d'obstacle " << std::endl;
-	std::cin >> nbrO;
+	do {
+	cout << "saisir le nombre d'obstacle " << endl;
+	cin >> nbrO;
+	} while (nbrO < 0) ;
 	for (int i=0; i<nbrO;i++){
 	int posX = 0;
 	int posY = 0;
@@ -42,41 +55,46 @@ void Game::startGame()
 	int diametre = 0;
 	int typeO = 0;
 
-	std::cout << "saisir la position X " << std::endl;
-	std::cin >> posX;
-	std::cout << "saisir la position Y " << std::endl;
-	std::cin >> posY;
-	std::cout << "saisir la hauteur " << std::endl;
-	std::cin >> hauteur;
-	std::cout << "saisir le diametre " << std::endl;
-	std::cin >> diametre;
-	std::cout << "saisir le type de l'obstacle : \n 0: arbre \n 1:rocher \n 2:batisse " << std::endl;
-	std::cin >> typeO;
+	cout << "saisir la position X " << endl;
+	cin >> posX;
+	cout << "saisir la position Y " << endl;
+	cin >> posY;
+	cout << "saisir la hauteur " << endl;
+	cin >> hauteur;
+	cout << "saisir le diametre " << endl;
+	cin >> diametre;
+	do {
+	cout << "saisir le type de l'obstacle : \n 0: arbre \n 1:rocher \n 2:batisse " << endl;
+	cin >> typeO;
 	if(typeO==0)
 		foret.addObstacle(new Arbre(posX, posY, diametre, hauteur));
+		cout << "Obstacle ajouté ! " << endl;
 	else if (typeO ==1 )
 		foret.addObstacle(new Rocher(posX, posY, diametre, hauteur));
+		cout << "Obstacle ajouté ! " << endl;
 	else if (typeO==2)
 		foret.addObstacle(new Batisse(posX, posY, diametre, hauteur));
+		cout << "Obstacle ajouté ! " << endl;	
 	}
-	
+	} while (typeO < 0 || typeO > 2) ;
+	// Sauvegarde dans le fichier 
 	foret.save("save.txt");
 	/*while (true)
 	{   
 		if(firstChar)
-			std::cout << "Pers1" << std::endl;
+			cout << "Pers1" << endl;
 		else
-			std::cout << "Pers2" << std::endl;
-		std::cout << "orientation" << std::endl;
+			cout << "Pers2" << endl;
+		cout << "orientation" << endl;
 		int angle;
-		std::cin >> angle;
+		cin >> angle;
 		persActuel->setOrientation(angle);
-		std::cout << "distance" << std::endl;
-		std::cout << "angle" << std::endl;
-		std::cout << "tir" << std::endl;
+		cout << "distance" << endl;
+		cout << "angle" << endl;
+		cout << "tir" << endl;
 		int distance;
-		std::cin >> distance;
-		std::cout << *persActuel << std::endl;
+		cin >> distance;
+		cout << *persActuel << endl;
 		firstChar = !firstChar;
 		if (firstChar)
 			persActuel = &perso1;
@@ -100,7 +118,7 @@ void Game::startGraphic()
 
 	if (!titre.loadFromFile("titre.png"))
 	{
-		std::cout << "erreur de chargement de titre.png" << std::endl;
+		cout << "erreur de chargement de titre.png" << endl;
 	}
 	titre.setSmooth(true);
 	bool updateFPS = true;
@@ -150,7 +168,7 @@ void Game::showmenu(sf::RenderWindow &window)
 			switch (menu.GetPressedItem())
 			{
 			case 0:
-				//std::cout << "Play button has been pressed" << std::endl;
+				//cout << "Play button has been pressed" << endl;
 
 
 				window.clear();
@@ -158,7 +176,7 @@ void Game::showmenu(sf::RenderWindow &window)
 				window.display();
 				break;
 			case 1:
-				std::cout << "Option button has been pressed" << std::endl;
+				cout << "Option button has been pressed" << endl;
 				break;
 			case 2:
 				window.close();

@@ -19,7 +19,7 @@ class Forest
     int f_y ;
     // Listes des objets du jeu
     std::list<Obstacle*> f_obstacles ;
-    std::list<Batisse> f_batisses ;
+    //std::list<Batisse> f_batisses ;
 
     public:
     // Constructeur par défault

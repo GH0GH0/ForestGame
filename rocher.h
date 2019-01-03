@@ -11,6 +11,6 @@ class Rocher : public Obstacle
     Rocher(Rocher const& tocopy);
     //Destructeurs
     ~Rocher();
-	std::string getName();
+	virtual std::string getName();
 };
 #endif
